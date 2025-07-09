@@ -1,0 +1,617 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f8fa;
+    color: #14171a; /* Default body text color set to black */
+    font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+}
+
+.container {
+    display: flex;
+    max-width: 1265px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.sidebar-left {
+    width: 275px;
+    padding: 0 12px;
+    border-right: 1px solid #e6ecf0;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%; /* Circular */
+    filter: brightness(1.1) drop-shadow(0 0 5px rgba(255, 165, 0, 0.5)); /* Brightness and orange shadow */
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #14171a; /* Black for logo text */
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 4px;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 9999px;
+    cursor: pointer;
+    margin-bottom: 4px;
+    color: #14171a; /* Black for menu item text */
+}
+
+nav ul li i {
+    margin-right: 16px;
+    font-size: 24px;
+    color: #FFA500; /* Light orange for icons */
+}
+
+nav ul li.active {
+    background-color: #ffe6cc; /* Lighter orange for active state background */
+    color: #14171a; /* Keep text black */
+}
+
+nav ul li:hover {
+    background-color: #ffe6cc; /* Lighter orange on hover background */
+    color: #14171a; /* Keep text black */
+}
+
+.khabar-btn {
+    background-color: #FFA500; /* Light orange color */
+    color: white; /* Keep button text white for contrast */
+    border: none;
+    border-radius: 9999px;
+    padding: 16px;
+    font-size: 17px;
+    font-weight: bold;
+    width: 90%;
+    margin: 16px 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.khabar-btn:hover {
+    background-color: #e09500; /* Slightly darker orange on hover */
+}
+
+.khabar-btn:disabled {
+    background-color: #ffd8a1; /* Even lighter orange when disabled */
+    cursor: not-allowed;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 9999px;
+    margin-top: auto;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.user-profile:hover {
+    background-color: #e6ecf0;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 2px solid #FFA500; /* Light orange border */
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.3); /* Light orange shadow */
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.username {
+    font-weight: bold;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: #14171a; /* Black for username */
+}
+
+.user-handle {
+    color: #657786; /* Grey for user handle for readability */
+    font-size: 15px;
+}
+
+.user-profile i {
+    font-size: 18px;
+    color: #FFA500; /* Light orange for ellipsis icon */
+}
+
+.main-content {
+    flex: 1;
+    border-right: 1px solid #e6ecf0;
+    margin-left: 275px;
+    max-width: 600px;
+    background-color: #fff;
+}
+
+.header {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e6ecf0;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 10;
+}
+
+.header h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: #14171a; /* Black for header title */
+}
+
+.tabs {
+    display: flex;
+}
+
+.tabs span {
+    flex: 1;
+    text-align: center;
+    padding: 16px 0;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: #657786; /* Default tab text color grey */
+}
+
+.tabs span.active {
+    color: #14171a; /* Black for active tab text */
+}
+
+.tabs span.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #FFA500; /* Light orange for active tab underline */
+    border-radius: 9999px;
+}
+
+.tabs span:hover {
+    background-color: #e6ecf0;
+    color: #14171a; /* Black on hover */
+}
+
+.create-khabar {
+    display: flex;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e6ecf0;
+}
+
+.create-khabar img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.khabar-input {
+    flex: 1;
+}
+
+.khabar-input input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: #14171a; /* Black for input text */
+    padding: 12px 0;
+    outline: none;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.khabar-input input::placeholder {
+    color: #657786; /* Grey for placeholder */
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.khabar-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid #e6ecf0;
+}
+
+.action-icons {
+    display: flex;
+}
+
+.action-icons i {
+    color: #FFA500; /* Light orange for action icons */
+    font-size: 20px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.action-icons i:hover {
+    color: #e09500; /* Slightly darker orange on hover */
+}
+
+.khabar-feed {
+    display: flex;
+    flex-direction: column;
+}
+
+.khabar {
+    display: flex;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e6ecf0;
+    cursor: pointer;
+}
+
+.khabar:hover {
+    background-color: #f5f8fa;
+}
+
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 2px solid #FFA500; /* Light orange border */
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.3); /* Light orange shadow */
+}
+
+.khabar-content {
+    flex: 1;
+}
+
+.khabar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.khabar-header .username {
+    font-weight: bold;
+    margin-right: 4px;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: #14171a; /* Black for usernames in feed */
+}
+
+.khabar-header .user-handle {
+    color: #657786; /* Grey for user handle in feed */
+    margin-right: 4px;
+}
+
+.khabar-header i {
+    margin-left: auto;
+    color: #FFA500; /* Light orange for ellipsis icon in feed */
+}
+
+.khabar-text {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 12px;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: #14171a; /* Black for khabar text */
+}
+
+.khabar-image {
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    border: 1px solid #e6ecf0;
+    transition: transform 0.3s;
+}
+
+.khabar-image:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.khabar-actions {
+    display: flex;
+    justify-content: space-between;
+    max-width: 425px;
+    color: #657786; /* Grey for khabar action numbers/text */
+}
+
+.khabar-actions span {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.khabar-actions i {
+    margin-right: 4px;
+    font-size: 16px;
+    transition: transform 0.2s;
+    color: #FFA500; /* Light orange for khabar action icons */
+}
+
+.khabar-actions span:hover {
+    color: #FFA500; /* Light orange on hover for text and icon */
+}
+
+.khabar-actions span:hover i {
+    transform: scale(1.2);
+    color: #FFA500; /* Light orange on hover for icon */
+}
+
+.sidebar-right {
+    width: 350px;
+    padding: 0 16px;
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #f5f8fa;
+}
+
+.search-bar {
+    position: sticky;
+    top: 0;
+    background-color: #f5f8fa;
+    padding: 12px 0;
+    z-index: 10;
+}
+
+.search-bar div {
+    display: flex;
+    align-items: center;
+    background-color: #e6ecf0;
+    border-radius: 9999px;
+    padding: 12px;
+}
+
+.search-bar i {
+    color: #FFA500; /* Light orange for search icon */
+    margin-right: 12px;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: #14171a; /* Black for search input text */
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.search-bar input::placeholder {
+    color: #657786; /* Grey for search placeholder */
+}
+
+.widget {
+    background-color: #fff;
+    border-radius: 16px;
+    margin: 16px 0;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.widget h2 {
+    padding: 12px 16px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Hind Siliguri', sans-serif;
+    border-bottom: 1px solid #e6ecf0;
+    color: #14171a; /* Black for widget titles */
+}
+
+.trending {
+    padding: 0 16px;
+}
+
+.trend-item {
+    padding: 12px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #e6ecf0;
+}
+
+.trend-item:last-child {
+    border-bottom: none;
+}
+
+.trend-item:hover {
+    background-color: #f5f8fa;
+}
+
+.trend-item .category {
+    font-size: 13px;
+    color: #657786; /* Grey for trend category */
+}
+
+.trend-item h3 {
+    font-size: 15px;
+    margin: 2px 0;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: #14171a; /* Black for trend item titles */
+}
+
+.trend-item .count {
+    font-size: 13px;
+    color: #657786; /* Grey for trend count */
+}
+
+.show-more {
+    display: block;
+    padding: 16px;
+    color: #FFA500; /* Light orange for "Show more" link */
+    font-size: 15px;
+    text-decoration: none;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.show-more:hover {
+    background-color: #f5f8fa;
+}
+
+.follow-suggestion {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #e6ecf0;
+}
+
+.follow-suggestion:last-child {
+    border-bottom: none;
+}
+
+.follow-suggestion:hover {
+    background-color: #f5f8fa;
+}
+
+.follow-suggestion img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 2px solid #FFA500; /* Light orange border */
+}
+
+.follow-btn {
+    background-color: #FFA500; /* Light orange color */
+    color: #fff; /* Keep button text white for contrast */
+    border: none;
+    border-radius: 9999px;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.follow-btn:hover {
+    background-color: #e09500; /* Slightly darker orange on hover */
+}
+
+.footer-links {
+    padding: 12px 16px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #657786; /* Grey for footer links */
+    font-size: 13px;
+    margin-right: 12px;
+    margin-bottom: 4px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #FFA500; /* Light orange on hover */
+}
+
+.footer-links span {
+    color: #657786; /* Grey for footer copyright */
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+@media (max-width: 1280px) {
+    .sidebar-right {
+        width: 290px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .sidebar-right {
+        display: none;
+    }
+
+    .main-content {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .sidebar-left {
+        width: 88px;
+        align-items: center;
+    }
+
+    .logo span,
+    nav ul li span,
+    .user-info,
+    .user-profile i {
+        display: none;
+    }
+
+    .logo {
+        justify-content: center;
+        padding: 12px 0;
+    }
+
+    nav ul li {
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        padding: 0;
+    }
+
+    nav ul li i {
+        margin: 0;
+    }
+
+    .khabar-btn {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .khabar-btn span {
+        display: none;
+    }
+
+    .user-profile {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-left: 88px;
+    }
+}
